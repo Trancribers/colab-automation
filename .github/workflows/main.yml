@@ -1,0 +1,26 @@
+name: Run Colab Notebook
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # Schedule to run every hour (you can customize this)
+
+jobs:
+  run-notebook:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install colab-cli
+        run: |
+          pip install colab-cli
+
+      - name: Run Colab Notebook
+        run: |
+          colab-cli run 1bOzgDejL7swfoaCmKiNTETxpJMT6BzO2 --authenticate leggentxt@gmail.com
