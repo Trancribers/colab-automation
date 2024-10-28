@@ -20,7 +20,11 @@ jobs:
       - name: Install colab-cli
         run: |
           pip install colab-cli
-
+          
+      - name: Install git
+        run: |
+          pip install git
+          
       - name: Run Colab Notebook
         run: |
           colab-cli run 1bOzgDejL7swfoaCmKiNTETxpJMT6BzO2 --authenticate leggentxt@gmail.com
